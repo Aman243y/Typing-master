@@ -1,0 +1,68 @@
+<div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded card border border-primary rounded-5 rounded-top-0 " alt="..." style="width: 28rem; margin: 100px auto;">
+    <div class="card-body" >
+        <h5 class="d-block p-2 text-bg-primary card-title text-dark text-center">Apna typing master</h5>
+        <hr>
+        <p class="fs-5 text-danger text-center border border-success p-2 mb-2">
+            <span
+              *ngFor="let letter of myText.split(''); let i = index"
+              [class]="compare(letter, enteredText[i])"
+              >{{ letter }}</span
+            >
+          </p>
+        <input type ="text" 
+        class="form-control"
+        #input
+        (keyup)="onInput(input.value)"
+         autofocus>
+         <div class="my-2">
+            <button class="btn-btn-primary" (click)="randomSentence()"> Refresh</button>
+          </div>
+          
+
+
+         <div class="text-center text-bg-primary my-3" *ngIf="myText===enteredText">
+            Great success!
+            
+         </div>
+    </div>
+  </div>
+
+
+<!-- <div class="container">
+  <div class="card mx-auto text-center" style="width: 32rem; margin-top: 10rem">
+    <div class="card-body">
+      <h3 class="card-title">Typing Challege</h3>
+
+      <p class="fs-5">
+        <span
+          *ngFor="let letter of myText.split(''); let i = index"
+          [class]="compare(letter, enteredText[i])"
+          >{{ letter }}</span
+        >
+      </p>
+
+      <div class="my-5">
+        <input
+          type="text"
+          #box
+          (keyup)="onInput(box.value)"
+          class="form-control"
+          placeholder="start typing here"
+        />
+      </div>
+
+      <div *ngIf="myText === enteredText">
+        <p class="text-center text-success fs-5">Success !</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <p class="text-danger text-center border border-success p-2 mb-2">
+    <span *ngFor="let letter of myText.split(''); let i=index;"
+                    [class]="compare(letter, enteredText[i])"> 
+        {{letter}}
+
+
+    </span>
+</p> -->
